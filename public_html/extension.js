@@ -46,7 +46,7 @@ function displayTime() {
         }
         var html = '';
         html += '<table width="100%">';
-        html += '<td><tr>Local Time: ' + hours + ":" + minutes + ":" + seconds + " / " + twelveHours + ":" + minutes + ":" + seconds + " " + " " + timeOfDay;
+        html += '<tr><td>Local Time: ' + hours + ":" + minutes + ":" + seconds + " / " + twelveHours + ":" + minutes + ":" + seconds + " " + " " + timeOfDay;
         html += '</td></tr>';
         html += '<tr><td>UTC Time: ' + UtcHours + ":" + minutes + ":" + seconds;
         html += '</td></tr>';
