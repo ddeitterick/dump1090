@@ -24,6 +24,17 @@ function displayTime() {
         var hours = time.getHours();
         var minutes = time.getMinutes();
         var seconds = time.getSeconds();
+        var UtcHours = time.getUTCHours();
+        if (hours < 12) {
+            timeOfDay = "AM";
+        } else {
+            timeOfDay = "PM";
+        }
+        if (hours > 12) {
+            twelveHours = hours - 12;
+        } else {
+            twelveHours = hours;
+        }
         if (hours < 10) {
             hours = '0' + hours;
         }
@@ -35,7 +46,9 @@ function displayTime() {
         }
         var html = '';
         html += '<table width="100%">';
-        html += '<td><tr>Local Time: ' + hours + ":" + minutes + ":" + seconds;
+        html += '<td><tr>Local Time: ' + hours + ":" + minutes + ":" + seconds + " / " + twelveHours + ":" + minutes + ":" + seconds + " " + " " + timeOfDay;
+        html += '</td></tr>';
+        html += '<tr><td>UTC Time: ' + UtcHours + ":" + minutes + ":" + seconds;
         html += '</td></tr>';
         html += '</table>';
         document.getElementById('time').innerHTML = html;
