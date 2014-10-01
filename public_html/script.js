@@ -62,73 +62,6 @@ function initialize() {
 	}
 	// Push OSM on to the end
 	mapTypeIds.push("OSM");
-	mapTypeIds.push("dark_map");
-
-	// Styled Map to outline airports and highways
-	var styles = [
-		{
-			"featureType": "administrative",
-			"stylers": [
-				{ "visibility": "off" }
-			]
-		},{
-			"featureType": "landscape",
-			"stylers": [
-				{ "visibility": "off" }
-			]
-		},{
-			"featureType": "poi",
-			"stylers": [
-				{ "visibility": "off" }
-			]
-		},{
-			"featureType": "road",
-			"stylers": [
-				{ "visibility": "off" }
-			]
-		},{
-			"featureType": "transit",
-			"stylers": [
-				{ "visibility": "off" }
-			]
-		},{
-			"featureType": "landscape",
-			"stylers": [
-				{ "visibility": "on" },
-				{ "weight": 8 },
-				{ "color": "#000000" }
-			]
-		},{
-			"featureType": "water",
-			"stylers": [
-			{ "lightness": -74 }
-			]
-		},{
-			"featureType": "transit.station.airport",
-			"stylers": [
-				{ "visibility": "on" },
-				{ "weight": 8 },
-				{ "invert_lightness": true },
-				{ "lightness": 27 }
-			]
-		},{
-			"featureType": "road.highway",
-			"stylers": [
-				{ "visibility": "simplified" },
-				{ "invert_lightness": true },
-				{ "gamma": 0.3 }
-			]
-		},{
-			"featureType": "road",
-			"elementType": "labels",
-			"stylers": [
-				{ "visibility": "off" }
-			]
-		}
-	]
-
-	// Add our styled map
-	var styledMap = new google.maps.StyledMapType(styles, {name: "Dark Map"});
 
 	// Define the Google Map
 	var mapOptions = {
@@ -152,8 +85,6 @@ function initialize() {
 		maxZoom: 18
 	}));
 
-	GoogleMap.mapTypes.set("dark_map", styledMap);
-	
 	// Listeners for newly created Map
     google.maps.event.addListener(GoogleMap, 'center_changed', function() {
         localStorage['CenterLat'] = GoogleMap.getCenter().lat();
