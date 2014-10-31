@@ -147,6 +147,7 @@ var planeObject = {
 			// This way we can hold it, but not show it just in case the plane comes back
 			if (this.seen > 58) {
 				this.reapable = true;
+                                PlanesToReap++;
 				if (this.marker) {
 					this.marker.setMap(null);
 					this.marker = null;

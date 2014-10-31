@@ -320,7 +320,9 @@ function normalizeTrack(track, valid){
 
 // Refeshes the larger table of all the planes
 function refreshTableInfo() {
-	var html = '<table id="tableinfo" width="100%">';
+        var html = '<hr width=80%>';
+        html += 'Planes in table: ' + (PlanesOnTable - PlanesToReap) + ' / Planes on map: ' + PlanesOnMap;
+        html += '<table id="tableinfo" width="100%">';
 	html += '<thead style="background-color: #BBBBBB; cursor: pointer;">';
 	html += '<td onclick="setASC_DESC(\'0\');sortTable(\'tableinfo\',\'0\');">ICAO</td>';
 	html += '<td onclick="setASC_DESC(\'1\');sortTable(\'tableinfo\',\'1\');">Flight</td>';
